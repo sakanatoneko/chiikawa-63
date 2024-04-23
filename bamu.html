@@ -3,58 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大富豪ゲーム</title>
+    <title>数当てゲーム</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            text-align: center;
             margin: 0;
             padding: 0;
-            text-align: center;
-            color: white;
+            background-color: #f0f0f0;
         }
-        h1 {
-            margin-top: 50px;
+        #guess-input {
+            margin-top: 20px;
         }
-        #game-container {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .card {
-            width: 100px;
-            height: 150px;
-            background-color: white;
-            border-radius: 8px;
-            margin: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .card img {
-            max-width: 80px;
-            max-height: 120px;
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>大富豪ゲーム</h1>
-    <div id="game-container">
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_heart_2.svg/1280px-Playing_card_heart_2.svg.png" alt="Heart 2">
-        </div>
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Playing_card_diamond_2.svg/1280px-Playing_card_diamond_2.svg.png" alt="Diamond 2">
-        </div>
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Playing_card_spade_2.svg/1280px-Playing_card_spade_2.svg.png" alt="Spade 2">
-        </div>
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Playing_card_club_2.svg/1280px-Playing_card_club_2.svg.png" alt="Club 2">
-        </div>
-    </div>
+    <h1>数当てゲーム</h1>
+    <p>1から10の間の秘密の数字を当ててください。</p>
+    <div id="result"></div>
+    <input type="number" id="guess-input" min="1" max="10">
+    <button onclick="checkGuess()">予想する</button>
+
+    <script>
+        // 秘密の数字をランダムに選ぶ
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guess-input').value);
+            const resultElement = document.getElementById('result');
+            if (isNaN(guess) || guess < 1 || guess > 10) {
+                resultElement.textContent = '1から10の数字を入力してください。';
+            } else if (guess === secretNumber) {
+                resultElement.textContent = 'おめでとうございます！正解です！';
+            } else {
+                resultElement.textContent = '残念！もう一度挑戦してください。';
+            }
+        }
+    </script>
 </body>
 </html>
