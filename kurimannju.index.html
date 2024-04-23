@@ -3,29 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>キャラクタープロフィール</title>
+<title>キャラクタープロフィールと動画</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        height: 100vh;
+        padding-top: 50px;
     }
 
     .profile {
         display: flex;
         align-items: center;
-        padding: 80px;
-        border: 10px solid #ccc;
+        padding: 20px;
+        border: 2px solid #ccc;
         border-radius: 10px;
+        margin-bottom: 20px;
     }
 
     .profile img {
-        width: 300px;
-        height: 300px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         margin-right: 20px;
+    }
+
+    .video-container {
+        max-width: 800px;
+    }
+
+    iframe {
+        width: 100%;
+        border-radius: 10px;
     }
 </style>
 </head>
@@ -33,13 +43,16 @@
 <div class="profile">
     <img src="https://stat.ameba.jp/user_images/20230828/17/nakai45281010/05/03/j/o0719059315330991308.jpg" alt="キャラクター画像">
     <div>
-        <h2>キャラクター名: 栗まんじゅう</h2>
+        <h2>キャラクター名: サンプルキャラクター</h2>
         <p>年齢: 20歳</p>
         <p>性別: 男性</p>
         <p>種族: 人間</p>
         <p>能力: 魔法を操る</p>
     </div>
 </div>
+
+<div class="video-container">
+    <iframe width="560" height="315" src="https://https://www.youtube.com/watch?v=vRB70XgZrAE/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</div>
 </body>
 </html>
-
