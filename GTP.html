@@ -53,7 +53,7 @@
     function playGame(userMove) {
       const computerMove = generateComputerMove();
       const result = determineWinner(userMove, computerMove);
-      document.getElementById('result').innerText = `You chose ${userMove}. Computer chose ${computerMove}. ${result}`;
+      document.getElementById('result').innerText = `${result}`;
     }
   </script>
 </body>
