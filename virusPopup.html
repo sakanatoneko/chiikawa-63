@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ウイルスに感染しました!</title>
+<title>VirusPopup!</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
   <script>
     // Function to generate and display virus popups
     function displayVirusPopups() {
-      const numberOfPopups = 20; // Number of popups to display
+      const numberOfPopups = 70; // Number of popups to display
       const popupWidth = 200; // Width of each popup
       const popupHeight = 100; // Height of each popup
       const screenWidth = window.innerWidth; // Width of the screen
@@ -41,9 +41,9 @@
         popup.style.left = leftPosition + 'px';
         popup.style.top = topPosition + 'px';
         popup.innerHTML = `
-          <h1>Virus Detected!</h1>
-          <p>Your computer is infected with a virus.</p>
-          <p>Please contact your system administrator.</p>
+          <h1>ウイルスに感染しました!</h1>
+          <p>コンピューターがウイルスに感染しました。</p>
+          <p>システム管理者に連絡してください。</p>
           <span class="closeButton" onclick="closePopup(this)">Close</span>
         `;
         document.body.appendChild(popup);
