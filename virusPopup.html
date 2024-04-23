@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virus Detected!</title>
+<title>ウイルスに感染しました!</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -11,35 +11,43 @@
   }
   .virusPopup {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: #ffff00;
+    border: 1px solid #ff0000;
     padding: 20px;
     z-index: 9999;
   }
   .closeButton {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     cursor: pointer;
+    margin-top: 8px;
   }
 </style>
 </head>
 <body>
   <script>
-    // Function to generate and display virus popup
-    function displayVirusPopup() {
-      const popup = document.createElement('div');
-      popup.className = 'virusPopup';
-      popup.innerHTML = `
-        <h1>Virus Detected!</h1>
-        <p>Your computer is infected with a virus.</p>
-        <p>Please contact your system administrator.</p>
-        <span class="closeButton" onclick="closePopup(this)">Close</span>
-      `;
-      document.body.appendChild(popup);
+    // Function to generate and display virus popups
+    function displayVirusPopups() {
+      const numberOfPopups = 20; // Number of popups to display
+      const popupWidth = 200; // Width of each popup
+      const popupHeight = 100; // Height of each popup
+      const screenWidth = window.innerWidth; // Width of the screen
+      const screenHeight = window.innerHeight; // Height of the screen
+
+      for (let i = 7; i < numberOfPopups; i++) {
+        const leftPosition = Math.random() * (screenWidth - popupWidth); // Random left position
+        const topPosition = Math.random() * (screenHeight - popupHeight); // Random top position
+
+        const popup = document.createElement('div');
+        popup.className = 'virusPopup';
+        popup.style.left = leftPosition + 'px';
+        popup.style.top = topPosition + 'px';
+        popup.innerHTML = `
+          <h1>Virus Detected!</h1>
+          <p>Your computer is infected with a virus.</p>
+          <p>Please contact your system administrator.</p>
+          <span class="closeButton" onclick="closePopup(this)">Close</span>
+        `;
+        document.body.appendChild(popup);
+      }
     }
 
     // Function to close the popup
@@ -48,11 +56,8 @@
       popup.parentNode.removeChild(popup);
     }
 
-    // Display multiple virus popups
-    const numberOfPopups = 5; // Change this number to adjust the number of popups
-    for (let i = 0; i < numberOfPopups; i++) {
-      setTimeout(displayVirusPopup, i * 2000); // Display popups with a delay
-    }
+    // Display virus popups
+    displayVirusPopups();
   </script>
 </body>
 </html>
