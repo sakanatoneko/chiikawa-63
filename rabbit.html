@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おしゃれなウェブサイト</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>おしゃれなウェブサイト</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">サービス</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>クリエイティブな世界へようこそ</h2>
+            <p>ここに魅力的なコンテンツを追加します。</p>
+            <a href="#" class="btn">さらに詳しく</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <h3>デザイン</h3>
+                <p>美しいデザインでユーザーを魅了します。</p>
+            </div>
+            <div class="feature">
+                <h3>パフォーマンス</h3>
+                <p>高速なパフォーマンスでユーザーエクスペリエンスを向上させます。</p>
+            </div>
+            <div class="feature">
+                <h3>使いやすさ</h3>
+                <p>直感的で使いやすいインターフェースを提供します。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 おしゃれなウェブサイト</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff8c8c;
+}
+
+.features {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 0 15px;
+    background-color: #f4f4f4;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
