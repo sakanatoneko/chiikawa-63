@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Counter Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #counter {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  #clickButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <h1>Click Counter Game</h1>
+  <p>Click the button to increase the counter:</p>
+  <div id="counter">0</div>
+  <button id="clickButton">Click Me</button>
+
+  <script>
+    // JavaScript code to handle the game logic
+    let counter = 0; // Initialize counter variable
+
+    // Function to update the counter and display it
+    function updateCounter() {
+      counter++; // Increment counter by 1
+      document.getElementById('counter').innerText = counter; // Update the counter display
+    }
+
+    // Event listener to handle button clicks
+    document.getElementById('clickButton').addEventListener('click', updateCounter);
+  </script>
+</body>
+</html>
