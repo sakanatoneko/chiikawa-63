@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #result {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .choiceButton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+  <h1>Rock Paper Scissors Game</h1>
+  <div id="result">Choose your move:</div>
+  <button class="choiceButton" onclick="playGame('rock')">Rock</button>
+  <button class="choiceButton" onclick="playGame('paper')">Paper</button>
+  <button class="choiceButton" onclick="playGame('scissors')">Scissors</button>
+
+  <script>
+    // Function to generate computer's move
+    function generateComputerMove() {
+      const moves = ['rock', 'paper', 'scissors'];
+      return moves[Math.floor(Math.random() * moves.length)];
+    }
+
+    // Function to determine the winner
+    function determineWinner(userMove, computerMove) {
+      if (userMove === computerMove) {
+        return 'It\'s a tie!';
+      } else if ((userMove === 'rock' && computerMove === 'scissors') ||
+                 (userMove === 'paper' && computerMove === 'rock') ||
+                 (userMove === 'scissors' && computerMove === 'paper')) {
+        return 'You win!';
+      } else {
+        return 'Computer wins!';
+      }
+    }
+
+    // Function to play the game
+    function playGame(userMove) {
+      const computerMove = generateComputerMove();
+      const result = determineWinner(userMove, computerMove);
+      document.getElementById('result').innerText = `You chose ${userMove}. Computer chose ${computerMove}. ${result}`;
+    }
+  </script>
+</body>
+</html>
