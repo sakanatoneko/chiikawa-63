@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>おしゃれなウェブサイト</title>
+    <title>ちいかわのうさぎ</title>
     <style>
+        /* CSSスタイル */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f7f7f7;
         }
 
         .container {
@@ -21,6 +23,7 @@
             background-color: #333;
             color: #fff;
             padding: 20px 0;
+            text-align: center;
         }
 
         header nav ul {
@@ -38,92 +41,118 @@
             text-decoration: none;
         }
 
-        .hero {
-            background-image: url('https://via.placeholder.com/1500x600');
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ff6b6b;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ff8c8c;
-        }
-
-        .features {
-            text-align: center;
+        .section {
             padding: 50px 0;
         }
 
-        .feature {
-            display: inline-block;
-            width: 30%;
-            padding: 20px;
-            margin: 0 15px;
-            background-color: #f4f4f4;
+        .section h2 {
+            text-align: center;
         }
 
-        footer {
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 5px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form input[type="submit"] {
             background-color: #333;
             color: #fff;
-            text-align: center;
-            padding: 20px 0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>おしゃれなウェブサイト</h1>
+            <h1>ちいかわのうさぎ</h1>
             <nav>
                 <ul>
-                    <li><a href="#">ホーム</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">サービス</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#about">うさぎについて</a></li>
+                    <li><a href="#care">うさぎのお世話</a></li>
+                    <li><a href="#gallery">うさぎの写真</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="about" class="section">
         <div class="container">
-            <h2>クリエイティブな世界へようこそ</h2>
-            <p>ここに魅力的なコンテンツを追加します。</p>
-            <a href="#" class="btn">さらに詳しく</a>
+            <h2>うさぎについて</h2>
+            <p>ちいかわのうさぎは、かわいい耳とふわふわのしっぽが特徴です。彼らは非常に愛らしく、家族の一員として親しまれています。</p>
         </div>
     </section>
 
-    <section class="features">
+    <section id="care" class="section">
         <div class="container">
-            <div class="feature">
-                <h3>デザイン</h3>
-                <p>美しいデザインでユーザーを魅了します。</p>
+            <h2>うさぎのお世話</h2>
+            <p>うさぎのお世話には、適切な食事、定期的なトリミング、そして十分な運動が必要です。また、彼らは穏やかな環境を好むので、ストレスを与えないように気を付けましょう。</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>うさぎの写真</h2>
+            <div class="gallery">
+                <img src="rabbit1.jpg" alt="うさぎの写真">
+                <img src="rabbit2.jpg" alt="うさぎの写真">
+                <img src="rabbit3.jpg" alt="うさぎの写真">
             </div>
-            <div class="feature">
-                <h3>パフォーマンス</h3>
-                <p>高速なパフォーマンスでユーザーエクスペリエンスを向上させます。</p>
-            </div>
-            <div class="feature">
-                <h3>使いやすさ</h3>
-                <p>直感的で使いやすいインターフェースを提供します。</p>
-            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>お問い合わせは以下のフォームからお願いします。</p>
+            <form>
+                <label for="name">お名前:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">メールアドレス:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">メッセージ:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="送信">
+            </form>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 おしゃれなウェブサイト</p>
+            <p>&copy; 2024 ちいかわのうさぎ</p>
         </div>
     </footer>
 </body>
