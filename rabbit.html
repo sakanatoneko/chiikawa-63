@@ -1,71 +1,130 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-W4MQTWZ');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="utf-8">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="thumbnail" content="https://www.anime-chiikawa.jp/images/ogp.jpg" />
-  <link rel="apple-touch-icon" sizes="152x152" href="images/icon.png">
-  <link rel="apple-touch-icon-precomposed" href="images/icon.png">
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <!-- TODO:OGP -->
-  <meta name="twitter:card" content="summary" />
-  <meta property="og:title" content="ちいかわ" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.anime-chiikawa.jp/" />
-  <meta property="og:image" content="https://www.anime-chiikawa.jp/images/ogp.jpg" />
-  <meta property="og:site_name" content="ちいかわ" />
-  <meta property="og:locale" content="ja_JP" />
-  <meta property="og:description" content="ちいかわ - オフィシャルサイト" />
-  <meta name="description" content="ちいかわ - オフィシャルサイト" />
-  <meta name="Keywords" content="ちいかわ,アニメ,フジテレビ" />
-  <title>ちいかわ</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'vyp4dsl',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おしゃれなウェブサイト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x600');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff8c8c;
+        }
+
+        .features {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .feature {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            margin: 0 15px;
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
-<body ontouchstart="">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4MQTWZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <div id="app" class="wraper" v-cloak>
-    <!-- ヘッダーメニュー -->
-    <header-menu></header-menu>
-    <!-- スクロールトップ -->
-    <scroll-top></scroll-top>
-    <div id="main" class="contents_wrap chara">
-      <div class="tree_chara_left_01 pc"></div>
-      <div class="tree_chara_right_01 pc"></div>
-      <!-- コンテンツ -->
-      <h2>
-        <p>
-          <img src="images/img_h2_05.png" alt="キャラクター">
-        </p>
-      </h2>
-      <chara></chara>
-      <p class="btn_more top">
-        <a href="index.html">トップへ</a>
-      </p>
-    </div>
-    <!-- フッター -->
-    <footer-menu></footer-menu>
-  </div>
-  <script src="./js/main.js"></script>
+<body>
+    <header>
+        <div class="container">
+            <h1>おしゃれなウェブサイト</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">サービス</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>クリエイティブな世界へようこそ</h2>
+            <p>ここに魅力的なコンテンツを追加します。</p>
+            <a href="#" class="btn">さらに詳しく</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <h3>デザイン</h3>
+                <p>美しいデザインでユーザーを魅了します。</p>
+            </div>
+            <div class="feature">
+                <h3>パフォーマンス</h3>
+                <p>高速なパフォーマンスでユーザーエクスペリエンスを向上させます。</p>
+            </div>
+            <div class="feature">
+                <h3>使いやすさ</h3>
+                <p>直感的で使いやすいインターフェースを提供します。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 おしゃれなウェブサイト</p>
+        </div>
+    </footer>
 </body>
 </html>
