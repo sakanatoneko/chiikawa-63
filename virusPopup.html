@@ -9,7 +9,7 @@
     font-family: Arial, sans-serif;
     text-align: center;
   }
-  #virusPopup {
+  .virusPopup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -19,7 +19,7 @@
     padding: 20px;
     z-index: 9999;
   }
-  #closeButton {
+  .closeButton {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -28,18 +28,30 @@
 </style>
 </head>
 <body>
-  <div id="virusPopup">
-    <h1>Virus Detected!</h1>
-    <p>Your computer is infected with a virus.</p>
-    <p>Please contact your system administrator.</p>
-    <span id="closeButton" onclick="closePopup()">Close</span>
-  </div>
-
   <script>
+    // Function to generate and display virus popup
+    function displayVirusPopup() {
+      const popup = document.createElement('div');
+      popup.className = 'virusPopup';
+      popup.innerHTML = `
+        <h1>Virus Detected!</h1>
+        <p>Your computer is infected with a virus.</p>
+        <p>Please contact your system administrator.</p>
+        <span class="closeButton" onclick="closePopup(this)">Close</span>
+      `;
+      document.body.appendChild(popup);
+    }
+
     // Function to close the popup
-    function closePopup() {
-      const popup = document.getElementById('virusPopup');
-      popup.style.display = 'none';
+    function closePopup(element) {
+      const popup = element.parentNode;
+      popup.parentNode.removeChild(popup);
+    }
+
+    // Display multiple virus popups
+    const numberOfPopups = 5; // Change this number to adjust the number of popups
+    for (let i = 0; i < numberOfPopups; i++) {
+      setTimeout(displayVirusPopup, i * 2000); // Display popups with a delay
     }
   </script>
 </body>
