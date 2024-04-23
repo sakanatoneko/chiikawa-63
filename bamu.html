@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>バムとケロ</title>
+    <title>バムとケロの日常</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,27 +11,51 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            color: white;
         }
         h1 {
-            color: white;
+            margin-top: 50px;
         }
         p {
-            color: white;
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        .frog-img {
-            max-width: 300px;
-            margin-top: 20px;
-            border-radius: 10px;
+        .weather {
+            font-size: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>バムとケロ</h1>
+    <h1>バムとケロの日常</h1>
     <p>バムとケロは、仲良しのカエルのコンビです。バムはちょっぴりおっちょこちょいで、ケロはいつも笑顔で元気いっぱい。二人とも一緒にいると楽しい時間が過ごせます。</p>
-    <img src="https://image.shutterstock.com/image-photo/cute-green-frog-260nw-593898707.jpg" alt="カエルの画像" class="frog-img">
-    <p>バムとケロと一緒に過ごすと、毎日が明るく楽しくなります！</p>
+    <p>そして、今日の東京・大手町の天気はこちらです：</p>
+    <div class="weather">
+        <!-- ここに天気情報が表示されます -->
+    </div>
+    <script>
+        // 天気情報を取得して表示する関数
+        function showWeather() {
+            // OpenWeatherMap APIのURLとAPIキー
+            var apiKey = "YOUR_API_KEY";
+            var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Otemachi,Tokyo&appid=" + apiKey + "&lang=ja&units=metric";
+
+            // APIから天気情報を取得
+            fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // 天気情報を表示
+                var weatherInfo = "現在の天気: " + data.weather[0].description + ", 気温: " + data.main.temp + " ℃";
+                document.querySelector(".weather").textContent = weatherInfo;
+            })
+            .catch(error => {
+                console.log("天気情報を取得できませんでした。エラー:", error);
+            });
+        }
+
+        // ページ読み込み時に天気情報を表示
+        showWeather();
+    </script>
 </body>
 </html>
